@@ -14,7 +14,16 @@ const dadosPessoa = {
     "email": "thaynara.sauner@email.com",
     "telefone": "46991234567",
     "dataNascimento": "01/01/1980",
-    "urls": ["https://github.com/TaynaraSauner", "https://linkedin.com/TaynaraSauner"]
+    "urls": [
+        {
+            "titulo": "LinkeIn"
+            "url": "https://linkedin.com/TaynaraSauner"
+        },
+
+        {
+            "titulo": "Github"
+            "url": "https://github.com/TaynaraSauner
+        }
 }
 //Montagem da div title
 const divTitle = document.getElementById("title")
@@ -52,13 +61,14 @@ listaContato.appendChild(itemTelefone)
 
 
 //Item de lista com link para cada link da lista de links
-for (url of dadosPessoa.urls) {
+for (let enderecoWeb of dadosPessoa.urls) {
     const ancora = document.createElement("a")
-    ancora.textContent = url
-    ancora.setAttribute("href" , url)
+    ancora.textContent = enderecoWeb.titulo
+    ancora.setAttribute("href" , enderecoWeb.url)
 
     const itemLink = document.createElement("li")
     itemLink.appendChild(ancora)
+
     
     listaContato.appendChild(itemLink)
 }
